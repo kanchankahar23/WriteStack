@@ -13,23 +13,8 @@
 [![Material UI](https://img.shields.io/badge/Material-UI-007FFF?style=flat-square&logo=mui)](https://mui.com/)
 [![Vite](https://img.shields.io/badge/Vite-Build-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 
-[Live Demo](#) · [Report Bug](https://github.com/kanchankahar23/WriteStack/issues) · [Request Feature](https://github.com/kanchankahar23/WriteStack/issues)
 
 </div>
-
----
-
-## 📋 Table of Contents
-
-- [About the Project](#-about-the-project)
-- [Tech Stack](#-tech-stack)
-- [Features](#-features)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Appwrite Setup](#-appwrite-setup)
-- [Environment Variables](#-environment-variables)
-- [Contributing](#-contributing)
-- [Author](#-author)
 
 ---
 
