@@ -33,7 +33,7 @@ export class Services {
             console.log("Appwrite service :: createPost :: error", error)
         }
     }
-    async updatepost(slug, { title, content, featuredImage, status }){
+    async updatepost(slug, { title, content, featuredImage, status }) {
         try {
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseID,
@@ -50,14 +50,79 @@ export class Services {
             console.log("AppWrite service :: updatepost :: error", error)
         }
     }
-    async deletepost(slug){
+    async deletepost(slug) {
         try {
-            await this.databases.deleteDocument
-            
+           return await this.databases.deleteDocument(
+                conf.appwriteDatabaseID,
+                    conf.appwriteCollectionID,
+                    slug
+           )
+
         } catch (error) {
-            console.log("Appwrite service :: updatepost :: error",error);
+            console.log("Appwrite service :: updatepost :: error", error);
+            return false
+
         }
     }
+    async getpost(slug) {
+        try {
+            return await this.databases.getDocument(
+                conf.appwriteDatabaseID,
+                conf.appwriteCollectionID,
+                slug
+            )
+
+        } catch (error) {
+            console.log(error)
+            return false
+        }
+    }
+    async getposts(Queries = [Query.equal("status", "active")]) {
+        try {
+            return await this.databases.listDocuments(
+                conf.appwriteDatabaseID,
+                conf.appwriteCollectionID,
+                queries,
+
+            )
+        } catch (error) {
+            console.log("error", error)
+        }
+    }
+
+    // file upload service
+    async uploadFile(file) {
+        try {
+            return await this.bucket.createFile(
+                conf.appwritesBucketID,
+                ID.unique(),
+                file
+            )
+        } catch (error) {
+            console.log("Appwrite servise :: uploadfile :: error", error);
+            return false
+        }
+    }
+     async deleteFile(fileId) {
+        try {
+            return await this.bucket.deleteFile(
+                conf.appwritesBucketID,
+                fileId
+            )
+            return true
+        } catch (error) {
+            console.log("Appwrite servise :: uploadfile :: error", error);
+            return false
+        }
+    }
+
+    getFilePreview(fileId){
+        return this.bucket.getFilePreview(
+            conf.appwritesBucketID,
+            fileId
+        )
+    }
+
 }
 
 const services = new Services()
