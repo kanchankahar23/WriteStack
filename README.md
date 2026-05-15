@@ -194,7 +194,5 @@ Contributions are welcome! Feel free to fork this repo and submit a pull request
 ---
 
 <div align="center">
-
-⭐ Star this repo if you found it helpful!
-
+<!-- center -->
 </div>
