@@ -195,8 +195,6 @@ Contributions are welcome! Feel free to fork this repo and submit a pull request
 
 <div align="center">
 
-Made with ❤️ using React + Appwrite
-
 ⭐ Star this repo if you found it helpful!
 
 </div>
